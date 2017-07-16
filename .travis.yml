@@ -1,0 +1,37 @@
+notifications:
+  email: false
+  slack:
+    rooms: typer2:lLH4I2CxXf7ZJpiuf3Blx79D
+    on_success: always
+    on_failure: always
+
+dist: trusty
+sudo: required
+branches:
+  only:
+  - master
+language: csharp
+mono: none
+dotnet: 1.0.0-preview2-003121
+install: dotnet restore Backend/Source/Shared && dotnet restore Backend/Source/$TEST_DIR && dotnet restore Backend/Test/"$TEST_DIR.Test"
+# addons:
+#   sonarqube:
+#     token: 265ea5c180b88564c9c3bf8a18a73dbb598ef8ee
+script:
+  - dotnet test Backend/Test/"$TEST_DIR.Test"
+  # - sonar-scanner
+env:
+  - TEST_DIR=Shared
+  - TEST_DIR=ExampleService
+  - TEST_DIR=AuthService
+  - TEST_DIR=UserService
+  - TEST_DIR=OrderService
+  - TEST_DIR=PaymentService
+  - TEST_DIR=Orchestrator
+  # - TEST_DIR=EmailService
+  - TEST_DIR=ProductService
+  - TEST_DIR=AddressService
+  - TEST_DIR=QueueService
+  - TEST_DIR=ProcessService
+  - TEST_DIR=NotificationService
+  - TEST_DIR=OrderProductService

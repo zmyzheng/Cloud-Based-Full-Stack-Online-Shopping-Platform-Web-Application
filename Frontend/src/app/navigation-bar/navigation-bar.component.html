@@ -1,0 +1,46 @@
+<nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" [routerLink]="'/welcome'">
+                Columbeal Restaurant
+            </a>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+            <ul class="nav navbar-nav">
+                <li class="active"><a [routerLink]="'/welcome'">
+                    <span class="glyphicon glyphicon-home" aria-hidden="true"></span> Home</a></li>
+                <li><a [routerLink]="'/shopping'">Shopping</a></li>
+            </ul>
+
+
+            <ul class="nav navbar-nav navbar-right"  style="padding:5px;">
+                <li><span>{{message}}</span></li>
+                <li *ngIf="loginFlag" class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown"
+                       role="button" aria-haspopup="true"
+                       aria-expanded="false">My Account <span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                        <li><a [routerLink] = "'/cart'">Cart</a></li>
+                        <li role="separator" class="divider"></li>
+                        <li><a [routerLink] = "'/profile'">User Profile</a></li>
+                        <li><a [routerLink] = "'/orders'">Order History</a></li>
+                    </ul>
+                </li>
+                <li><button *ngIf="!loginFlag"	 class="btn btn-info btn-sm" (click)="onLogIn()"  >Sign in</button></li>
+                <li><button	*ngIf="!loginFlag" class="btn btn-default btn-sm" (click)="onRegister()" >Register</button></li>
+                <li><button *ngIf="loginFlag" class=" btn btn-info btn-sm" (click)="onSignOut()">Sign out</button></li>
+            </ul>
+
+        </div>
+
+
+    </div>
+</nav>
+
+

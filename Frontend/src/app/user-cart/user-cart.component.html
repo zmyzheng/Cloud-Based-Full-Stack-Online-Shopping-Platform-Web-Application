@@ -1,0 +1,29 @@
+<app-navigation-bar></app-navigation-bar>
+<br>
+
+<p *ngIf="nums.length===0">Your cart is empty</p>
+<div *ngIf="nums.length!==0" class="container">
+    <table class="table">
+        <tr>
+            <th>Items</th>
+            <th>Numbers</th>
+            <th>Price</th>
+            <th></th>
+        </tr>
+        <tr *ngFor="let item of items;let i = index;">
+            <td>{{item.Name}}</td>
+            <td>
+                <input type="number" min="1" step="1" [(ngModel)]="nums[i]"
+                       (keypress)="decimalHandler($event)" (ngModelChange) = "updateCartContent()"/>
+            </td>
+            <td>
+                <p>{{myParseFloat(item.Price) * nums[i]}}</p>
+            </td>
+            <td>
+                <button (click)="deleteAnItem(i)">delete</button>
+            </td>
+        </tr>
+    </table>
+    <p>total price {{total}}</p>
+    <button class="btn btn-primary btn-xs" (click)="openCheckout()">Checkout</button>
+</div>

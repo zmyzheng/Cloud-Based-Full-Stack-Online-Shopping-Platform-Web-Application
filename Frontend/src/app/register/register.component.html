@@ -1,0 +1,84 @@
+<app-navigation-bar></app-navigation-bar>
+
+    <header class="jumbotron">
+
+        <!-- Main component for a primary marketing message or call to action -->
+
+        <div class="container">
+            <div class="row row-header">
+                <div class="col-xs-12 col-sm-8">
+                    <h1>Columbeal Restaurant</h1>
+                    <p style="padding:40px;"></p>
+                    <p>We take inspiration from the World's best cuisines, and create a unique fusion experience. Our lipsmacking creations will tickle your culinary senses!</p>
+                </div>
+                <div class="col-xs-12 col-sm-4">
+                    <h2>Register Form</h2>
+                    <form (ngSubmit)="onSubmit(theForm)" #theForm="ngForm">
+                        <div class="form-group">
+                            <label for="firstname">Firstname</label>
+                            <input type="text" class="form-control" id="firstname"
+                                   required
+                                   [(ngModel)]="regUser.firstname" name="firstname">
+                        </div>
+                        <div class="form-group">
+                            <label for="lastname">Lastname</label>
+                            <input type="text" class="form-control" id="lastname"
+                                   required
+                                   [(ngModel)]="regUser.lastname" name="lastname">
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="text" class="form-control" id="email"
+                                   required
+                                   [(ngModel)]="regUser.email" name="email">
+                        </div>
+                        <div class="form-group">
+                            <label for="password">Password</label>
+                            <input type="password" class="form-control" id="Password"
+                                   required
+                                   [(ngModel)]="regUser.password" name="pwd">
+                        </div>
+                        <button type="submit" class="btn btn-success">Submit</button>
+
+                    </form>
+                    <button (click)="login()" class="btn btn-success">Sign up with Facebook</button>
+                    <p>{{message}}</p>
+                </div>
+
+            </div>
+        </div>
+    </header>
+
+
+<!--<div class="container">-->
+    <!--<h2>Register Form</h2>-->
+    <!--<form (ngSubmit)="onSubmit(theForm)" #theForm="ngForm">-->
+    <!--<div class="form-group">-->
+        <!--<label for="firstname">Firstname</label>-->
+        <!--<input type="text" class="form-control" id="firstname"-->
+               <!--required-->
+               <!--[(ngModel)]="regUser.firstname" name="firstname">-->
+    <!--</div>-->
+    <!--<div class="form-group">-->
+        <!--<label for="lastname">Lastname</label>-->
+        <!--<input type="text" class="form-control" id="lastname"-->
+               <!--required-->
+               <!--[(ngModel)]="regUser.lastname" name="lastname">-->
+    <!--</div>-->
+    <!--<div class="form-group">-->
+        <!--<label for="email">Email</label>-->
+        <!--<input type="text" class="form-control" id="email"-->
+               <!--required-->
+               <!--[(ngModel)]="regUser.email" name="email">-->
+    <!--</div>-->
+    <!--<div class="form-group">-->
+        <!--<label for="password">Password</label>-->
+        <!--<input type="password" class="form-control" id="Password"-->
+               <!--required-->
+               <!--[(ngModel)]="regUser.password" name="pwd">-->
+    <!--</div>-->
+    <!--<button type="submit" class="btn btn-success">Submit</button>-->
+    <!--</form>-->
+    <!--<p>{{message}}</p>-->
+<!--</div>-->
+

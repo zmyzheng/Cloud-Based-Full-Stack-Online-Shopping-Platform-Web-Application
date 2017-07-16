@@ -1,0 +1,41 @@
+{
+    "version": "1.0.0-*",
+    "buildOptions": {
+        "xmlDoc": true,
+        "additionalArguments": [
+            "/ruleset:../../Ruleset/Code.ruleset"
+        ]
+    },
+    "dependencies": {
+        "Microsoft.NETCore.App": {
+            "type": "platform",
+            "version": "1.0.0"
+        },
+        "Amazon.Lambda.Core": "1.0.0*",
+        "Newtonsoft.Json": "10.0.1",
+        "jose-jwt": "2.1.0",
+        "Shared": "1.0.0",
+        "SimpleInjector": "3.3.2",
+        "Amazon.Lambda.Tools": {
+            "version": "1.5.0",
+            "type": "build"
+        },
+        "System.Data.Common": "4.1.0",
+        "MySql.Data": "7.0.6-IR31",
+        "StyleCop.Analyzers": {
+            "version": "1.0.0",
+            "type": "build"
+        },
+        "Dapper": "1.50.2",
+        "Dapper.Contrib": "1.50.0",
+        "AWSSDK.SQS": "3.3.1.10"
+    },
+    "tools": {
+        "Amazon.Lambda.Tools": "1.5.0"
+    },
+    "frameworks": {
+        "netcoreapp1.0": {
+            "imports": "dnxcore50"
+        }
+    }
+}

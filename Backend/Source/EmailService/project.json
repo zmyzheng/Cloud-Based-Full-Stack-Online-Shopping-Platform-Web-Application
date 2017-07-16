@@ -1,0 +1,35 @@
+{
+    "version": "1.0.0-*",
+    "buildOptions": {
+        "xmlDoc": true,
+        "additionalArguments": [
+            "/ruleset:../../Ruleset/Code.ruleset"
+        ]
+    },
+    "dependencies": {
+        "Microsoft.NETCore.App": {
+            "type": "platform",
+            "version": "1.0.0"
+        },
+        "Amazon.Lambda.Core": "1.0.0*",
+        "Shared": "1.0.0",
+        "SimpleInjector": "3.3.2",
+        "Amazon.Lambda.Tools": {
+            "version": "1.5.0",
+            "type": "build"
+        },
+        "StyleCop.Analyzers": {
+            "version": "1.0.0",
+            "type": "build"
+        },
+        "Newtonsoft.Json": "10.0.1"
+    },
+    "tools": {
+        "Amazon.Lambda.Tools": "1.5.0"
+    },
+    "frameworks": {
+        "netcoreapp1.0": {
+            "imports": "dnxcore50"
+        }
+    }
+}
