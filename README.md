@@ -1,4 +1,6 @@
-# E6998 Sec 6 Modern *-As-A-Service Application Development ![Travis-CI Build Status](https://travis-ci.com/MZhoume/E6998S6.svg?token=NFcaTqAD3M9y6sq1tYKJ&branch=master)
+# Cloud Based Full Stack Online Shopping Platform Web Application
+# E6998 Sec 6 Modern *-As-A-Service Application Development Project
+
 
 ### Requirement:
 **FIRST: set up your ssh keys with [GitHub](https://help.github.com/articles/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent/)**
@@ -10,7 +12,7 @@
 - [Gulp](http://gulpjs.com)
   - gulpfile.js
 - [Expressjs](http://expressjs.com)
-- [AngularJS](http://angular.io)
+- [Angular](http://angular.io)
   - Version 2
   - [CLI](http://cli.angular.io)
   - [CLI Dev](https://github.com/angular/angular-cli)
@@ -36,8 +38,10 @@
   - [Pull Request](https://help.github.com/articles/about-pull-requests/)
 
 ### Coding Guideline
-- [C#](https://msdn.microsoft.com/en-us/library/ff926074.aspx)
 - [TypeScript](https://github.com/Microsoft/TypeScript/wiki/Coding-guidelines)
+- [C#](https://msdn.microsoft.com/en-us/library/ff926074.aspx)
+- [Node.js](https://nodejs.org/en/docs/guides/)
+- [Express](https://expressjs.com/en/starter/installing.html)
 - [JSON](https://google.github.io/styleguide/jsoncstyleguide.xml)
 - [Unit Test](http://geosoft.no/development/unittesting.html)
 
