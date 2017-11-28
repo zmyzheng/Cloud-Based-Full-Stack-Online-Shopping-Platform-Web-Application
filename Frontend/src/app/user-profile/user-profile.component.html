@@ -1,35 +1,51 @@
 <app-navigation-bar></app-navigation-bar>
-<div class="row row-content">
+<div class="container">
+    <br>
+    <div class="row">
+        <div class="alert alert-success" role="alert" *ngIf="message">
+            {{message}}
+        </div>
+    </div>
+</div>
 
-    <div class="col-xs-12 col-sm-9">
+
+<div class="row row-content">
+    <div class="col-xs-12 col-sm-6 col-sm-push-2">
         <form class="form-horizontal" role="form" (ngSubmit)="onSubmit(theForm)" #theForm="ngForm">
             <div class="form-group">
                 <label for="firstname" class="col-sm-2 control-label">First Name</label>
                 <div class="col-sm-10">
-                    <input type="text" class="form-control" id="firstname" name="firstname" placeholder="Enter First Name" required
-                           [(ngModel)]="regUser.firstname">
+                    <input type="text" class="form-control" id="firstname" name="firstname" placeholder="Enter First Name"
+                           [(ngModel)]="user.firstname">
                 </div>
             </div>
             <div class="form-group">
                 <label for="lastname" class="col-sm-2 control-label">Last Name</label>
                 <div class="col-sm-10">
-                    <input type="text" class="form-control" id="lastname" name="lastname" placeholder="Enter Last Name" required
-                           [(ngModel)]="regUser.lastname">
+                    <input type="text" class="form-control" id="lastname" name="lastname" placeholder="Enter Last Name"
+                           [(ngModel)]="user.lastname">
                 </div>
             </div>
 
             <div class="form-group">
                 <label for="emailid" class="col-sm-2 control-label">Email</label>
                 <div class="col-sm-10">
-                    <input type="email" class="form-control" id="emailid" name="emailid" placeholder="Email" required
-                           [(ngModel)]="regUser.email">
+                    <input type="email" class="form-control" id="emailid" name="emailid" placeholder="Email"
+                           [(ngModel)]="user.email">
                 </div>
             </div>
             <div class="form-group">
                 <label for="password" class="col-sm-2 control-label">Password</label>
                 <div class="col-sm-10">
                     <input type="password" class="form-control" id="password" name="password" placeholder="Password" required
-                           [(ngModel)]="regUser.password">
+                           [(ngModel)]="user.password">
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="phone" class="col-sm-2 control-label">Phone</label>
+                <div class="col-sm-10">
+                    <input type="tel" class="form-control" id="phone" name="phone" placeholder="Phone"
+                           [(ngModel)]="user.phone">
                 </div>
             </div>
 
@@ -40,10 +56,13 @@
                     <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
                 </div>
             </div>
+
+
         </form>
     </div>
-    <div class="col-xs-12 col-sm-3">
-        <p style="padding:20px;"></p>
+    <div class="col-xs-12 col-sm-2 col-sm-push-2">
+
+        <img src="../../assets/img/logo.gif" class="img-responsive">
     </div>
 </div>
 <app-footer></app-footer>

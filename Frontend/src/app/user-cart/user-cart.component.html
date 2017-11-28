@@ -1,29 +1,56 @@
 <app-navigation-bar></app-navigation-bar>
 <br>
+<div class="container">
+    <h4 *ngIf="nums.length===0">Cart is empty</h4>
+</div>
 
-<p *ngIf="nums.length===0">Your cart is empty</p>
 <div *ngIf="nums.length!==0" class="container">
-    <table class="table">
-        <tr>
-            <th>Items</th>
-            <th>Numbers</th>
-            <th>Price</th>
-            <th></th>
-        </tr>
-        <tr *ngFor="let item of items;let i = index;">
-            <td>{{item.Name}}</td>
-            <td>
-                <input type="number" min="1" step="1" [(ngModel)]="nums[i]"
-                       (keypress)="decimalHandler($event)" (ngModelChange) = "updateCartContent()"/>
-            </td>
-            <td>
-                <p>{{myParseFloat(item.Price) * nums[i]}}</p>
-            </td>
-            <td>
-                <button (click)="deleteAnItem(i)">delete</button>
-            </td>
-        </tr>
-    </table>
-    <p>total price {{total}}</p>
-    <button class="btn btn-primary btn-xs" (click)="openCheckout()">Checkout</button>
+    <div class="row">
+        <div class="col-md-8">
+            <table class="table table-striped">
+                <thead>
+                <tr>
+                    <th>Items</th>
+                    <th>Numbers</th>
+                    <th>Price</th>
+                    <th></th>
+                </tr>
+                </thead>
+                <tbody>
+
+                <tr *ngFor="let item of items;let i = index;">
+                    <td>{{item.Name}}</td>
+                    <td>
+                        <input type="number" min="1" step="1" [(ngModel)]="nums[i]"
+                               (keypress)="decimalHandler($event)" (ngModelChange) = "updateCartContent()"/>
+                    </td>
+                    <td>
+                        <p>${{myParseFloat(item.Price) * nums[i]}}</p>
+                    </td>
+                    <td>
+                        <button type="button" class="btn btn-danger btn-xs" (click)="deleteAnItem(i)">
+                            <span class="glyphicon glyphicon-remove"></span>
+                        </button>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Total</td>
+                    <td></td>
+                    <td>${{total}}</td>
+                    <td></td>
+                </tr>
+                </tbody>
+            </table>
+            <div class="row">
+                <div class="col-md-4">
+                    <button class="btn btn-primary btn-xs" (click)="placeOrder()">Submit Order</button>
+                </div>
+                <div class="col-md-4 col-md-pull-2" *ngIf="loading">
+                    <img src="../../assets/img/loading_main.gif" height="40" width="40"/>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
 </div>

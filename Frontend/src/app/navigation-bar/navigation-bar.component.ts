@@ -21,11 +21,9 @@ export class NavigationBarComponent implements OnInit {
     ) { }
 
     ngOnInit() {
-        console.log('here init navigation bar');
         this.user = new User();
         // if user log in, redirect to welcome page
         if (this.userService.getUser() === undefined){
-            console.log("please log in");
             this.loginFlag = false;
         }else {
             this.user = this.userService.getUser();

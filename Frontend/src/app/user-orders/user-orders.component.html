@@ -1,3 +1,63 @@
-<p>
-  user-orders works!
-</p>
+<app-navigation-bar></app-navigation-bar>
+<br>
+<br>
+<div *ngIf="!disableFlage">
+
+<div *ngFor="let oid of ordersIds;let ii = index;" class="container">
+    <div class="row">
+        <div class="col-md-6">
+            <h4>Order {{oid}}</h4>
+        </div>
+        <div class="col-md-6 col-md-push-1">
+            <div *ngIf="orders[ii].PaymentId === 0">
+                <button class="btn btn-primary btn-xs" (click)="openCheckout(ii)">Checkout</button>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-8">
+            <table class="table table-striped">
+                <thead>
+                <tr>
+                    <th>Items</th>
+                    <th>Numbers</th>
+                    <th>Price</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr *ngFor="let product of orders[ii].Products;let i = index;">
+                    <td>{{items[product.ProductId-1].Name}}</td>
+                    <td>
+                        {{product.Count}}
+                    </td>
+                    <td>
+                        <p>${{myParseFloat(items[product.ProductId-1].Price) * product.Count}}</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        Total
+                    </td>
+                    <td></td>
+                    <td>
+                        ${{calc(orders[ii])}}
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <br>
+    <br>
+</div>
+</div>
+
+<div *ngIf="disableFlage" class="container">
+    <br>
+    <br>
+    <div style="text-align: center">
+        <img src="../../assets/img/Loading_icon.gif"/>
+    </div>
+
+
+</div>

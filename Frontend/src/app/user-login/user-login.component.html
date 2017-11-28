@@ -21,21 +21,6 @@
                 <form (ngSubmit)="onSubmit(theForm)" #theForm="ngForm">
 
 
-                    <!--<div class="form-group">-->
-                        <!--<label for="email">Email</label>-->
-                        <!--<input type="text" class="form-control" id="firstname"-->
-                               <!--required-->
-                               <!--[(ngModel)]="regUser.firstname" name="firstname">-->
-                    <!--</div>-->
-
-                    <!--<div class="form-group">-->
-                        <!--<label for="firstname">Firstname</label>-->
-                        <!--<input type="text" class="form-control" id="firstname"-->
-                               <!--required-->
-                               <!--[(ngModel)]="regUser.firstname" name="firstname">-->
-                    <!--</div>-->
-
-
                     <div class="form-group">
                         <label for="email">Email</label>
                         <input id="email" type="email" name="email" class="form-control" required [(ngModel)]="user.email">
@@ -46,14 +31,24 @@
                         <label for="pwd">Password</label>
                         <input id="pwd" type="password" name="pwd" class="form-control" required [(ngModel)]="user.password">
                     </div>
-                    <button type="submit" class="btn btn-success" [disabled]="!theForm.form.valid">Submit</button>
+                    <div class="row">
+                        <div class="col-md-4">
+                            <button type="submit" class="btn btn-success" [disabled]="!theForm.form.valid">Submit</button>
+                        </div>
+                        <div class="col-md-4 col-md-pull-1" *ngIf="loading">
+                            <img src="../../assets/img/loading_main.gif" height="40" width="40"/>
+                        </div>
+                    </div>
+
 
                 </form>
-                <button (click)="login()" class="btn btn-success">Log in with Facebook</button>
 
                 <div *ngIf="message">
-                    <p> {{message}}</p>
+                    <p>
+                        {{message}}
+                    </p>
                 </div>
+
             </div>
 
         </div>

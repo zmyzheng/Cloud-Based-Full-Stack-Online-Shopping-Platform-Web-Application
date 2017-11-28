@@ -18,11 +18,12 @@ export class WelcomeComponent implements OnInit {
         private itemService: ItemService,
     ) { }
 
-    async ngOnInit() : Promise<any> {
+    async ngOnInit(): Promise<any> {
         // get items from server
         try {
             let itemResult = await this.itemService.getItemsRemote();
             this.items = itemResult;
+            console.log(itemResult);
             console.log('get items success');
         } catch (ex) {
             console.error('An error occurred', ex);

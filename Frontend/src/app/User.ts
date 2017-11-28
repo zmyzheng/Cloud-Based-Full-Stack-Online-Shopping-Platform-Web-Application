@@ -8,4 +8,5 @@ export class User {
     email;
     password;
     JWT;
+    phone;
 }

@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import {User} from "../User";
-import {Router} from "@angular/router";
-import {UserService} from "../user.service";
+import {User} from '../User';
+import {Router} from '@angular/router';
+import {UserService} from '../user.service';
 import 'rxjs/add/operator/toPromise';
 
 @Component({
@@ -18,44 +18,33 @@ export class RegisterComponent implements OnInit {
         private router: Router,
     ) {}
 
-    login() {
-        try {
-            this.userService.facebooklogin();
-            this.forward('/welcome');
-        }catch (ex) {
-            console.error('An error occurred', ex);
-        }
-    }
 
     ngOnInit() {
         this.regUser = new User();
         // if usr log in, redirect to welcome page
-        if (this.userService.getUser() == undefined){
-            console.log("please register");
+        if (this.userService.getUser() === undefined) {
+            console.log('please register');
         }else {
             this.forward('/welcome');
         }
 
     }
 
-    forward(dest:string) {
+    forward(dest: string) {
         this.router.navigate([dest]);
     }
 
-    async onSubmit() : Promise<any> {
-        console.log("going to register");
+    async onSubmit(): Promise<any> {
+        console.log('going to register');
         this.message = 'Loading';
         try {
             const resigterResult = await this.userService.registerUserRemote(this.regUser);
             console.log(resigterResult);
-            if (resigterResult.result  === 'success') {
-                this.regUser = new User();
-                this.message = 'register success';
+            if (resigterResult) {
+                this.message = 'register success, please valid your email';
                 console.log('register success');
-                this.forward('/login');
             } else {
-                console.log(resigterResult);
-                //this.message = response.reason;
+                this.message = 'register fail';
                 console.log('register fail');
             }
         } catch (ex) {

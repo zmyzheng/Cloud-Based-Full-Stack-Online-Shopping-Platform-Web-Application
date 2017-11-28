@@ -30,7 +30,8 @@ export class ShoppingComponent implements OnInit {
         // get items from server
         try {
             let itemResult = await this.itemService.getItemsRemote();
-            this.items = itemResult;
+            this.items = itemResult.Payload;
+
             console.log('get items success');
         } catch (ex) {
             console.error('An error occurred', ex);
@@ -51,7 +52,7 @@ export class ShoppingComponent implements OnInit {
             this.router.navigate(['/login']);
             console.log("you should not be here")
         }else {
-            alert("you add "+ String(num) + " " + item.Name + " to cart");
+            this.message = String(num) + " " + item.Name;
             this.cartService.addToCart(item, num);
         }
     }
