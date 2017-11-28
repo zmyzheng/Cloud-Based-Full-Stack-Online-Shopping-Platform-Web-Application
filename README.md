@@ -1,5 +1,5 @@
 # Cloud Based Full Stack Online Shopping Platform Web Application
-# E6998 Sec 6 Modern *-As-A-Service Application Development Project
+## E6998 Sec 6 Modern *-As-A-Service Application Development Project
 
 
 ### Requirement:
@@ -11,7 +11,7 @@
   - Node Package Manager (npm)
 - [Gulp](http://gulpjs.com)
   - gulpfile.js
-- [Expressjs](http://expressjs.com)
+- [Express](http://expressjs.com)
 - [Angular](http://angular.io)
   - Version 2
   - [CLI](http://cli.angular.io)
