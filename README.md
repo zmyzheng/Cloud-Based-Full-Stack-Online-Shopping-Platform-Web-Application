@@ -2,6 +2,17 @@
 ## E6998 Sec 6 Modern *-As-A-Service Application Development Project
 
 
+### Overview
+(TypeScript, Angular, Node.js, Bootstrap, jQuery, HTML/CSS, AWS Elastic Beanstalk, S3, AWS RDS, Stripe)
+
+§ Developed an online shopping web application with Angular and Node.js based on microservice architecture
+
+§ Realized authentication and authorization with OAuth 2.0 and simulated credit card transaction via Stripe
+
+§ Design and implement RESTful APIs with Swagger for efficient and robust data exchange
+
+§ Create high performance and flexible database schemas on AWS RDS Platform to record order and user information
+
 ### Requirement:
 **FIRST: set up your ssh keys with [GitHub](https://help.github.com/articles/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent/)**
 
